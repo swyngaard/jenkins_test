@@ -5,8 +5,8 @@ pipeline {
     stages {
         stage('build') {
             steps {
-                sh 'apt-get -y update'
-                sh 'apt-get -y install python3 python3-pip virtualenv'
+                sh 'sudo apt-get -y update'
+                sh 'sudo apt-get -y install python3 python3-pip virtualenv'
                 sh '''
                     virtualenv -p /usr/bin/python3 jenkins_test
                     source jenkins_test/bin/activate

@@ -7,7 +7,7 @@ pipeline {
             steps {
                 echo 'Testing'
                 sh 'virtualenv -p /usr/bin/python3 jenkins_test'
-                sh '/bin/bash -c "source jenkins_test/bin/activate"'
+                sh 'source jenkins_test/bin/activate'
                 sh 'pip3 install requests'
             }
         }

@@ -18,3 +18,5 @@ RUN ["/bin/bash", "-c", "echo \"jenkins:jsecure1842\" | chpasswd"]
 
 # Grant user sudo privileges without password prompt
 RUN ["/bin/bash", "-c", "echo \"jenkins ALL=NOPASSWD: ALL\" | (EDITOR=\"tee -a\" visudo)"]
+
+ENTRYPOINT ["/bin/bash", "-l"]

@@ -6,6 +6,7 @@ pipeline {
         stage('build') {
             steps {
                 sh 'sudo apt-get -y update'
+                sh 'sudo test'
                 echo 'Testing'
                 sh 'sudo apt-get -y install python3 python3-pip virtualenv'
                 sh '''

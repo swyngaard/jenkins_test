@@ -5,16 +5,10 @@ pipeline {
     stages {
         stage('build') {
             steps {
-                sh 'sudo apt-get -y update'
-                sh 'id'
-                sh 'sudo test'
                 echo 'Testing'
-                sh 'sudo apt-get -y install python3 python3-pip virtualenv'
-                sh '''
-                    virtualenv -p /usr/bin/python3 jenkins_test
-                    source jenkins_test/bin/activate
-                    pip3 install requests
-                   '''
+                sh virtualenv -p /usr/bin/python3 jenkins_test
+                sh source jenkins_test/bin/activate
+                sh pip3 install requests
             }
         }
         stage('test') {

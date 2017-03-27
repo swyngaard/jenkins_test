@@ -17,6 +17,6 @@ RUN apt-get -y install openssh-server postgresql postgresql-client python3-psyco
 RUN groupadd -g $JENKINS_GID $USERNAME
 RUN useradd $USERNAME -u $JENKINS_UID -g $JENKINS_GID --shell /bin/bash --create-home
 
-RUN echo "$USERNAME ALL=NOPASSWD: ALL" >> /etc/sudoers
+RUN echo "$USERNAME ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers
 
 CMD /bin/bash -l

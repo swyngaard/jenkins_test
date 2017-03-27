@@ -12,7 +12,7 @@ node {
             }
 
             stage("Hard") {
-                sh "sudo test"
+                sh "sudo /usr/bin/test"
             }
 
             stage("After") {

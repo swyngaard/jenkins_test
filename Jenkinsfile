@@ -10,9 +10,11 @@ pipeline {
         }
         stage('test') {
             steps {
-                sh 'echo steps_stage'
-                sh 'su -c pwd'
-                sh 'echo hello'
+                sh """echo steps_stage
+                sudo test
+                su -c pwd
+                sh echo hello
+                """
             }
         }
     }

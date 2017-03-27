@@ -12,7 +12,7 @@ node {
             }
 
             stage("Hard") {
-                sh "sudo /usr/bin/test"
+                sh "sudo service ssh start"
             }
 
             stage("After") {

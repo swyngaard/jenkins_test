@@ -1,20 +1,22 @@
-pipeline {
-    agent {
-        dockerfile true
-    }
-    stages {
-        stage('build') {
-            steps {
-                echo 'Testing'
+node {
+    stage("Main build") {
+
+        checkout scm
+
+        docker.build('jenkins/16.04')
+
+        docker.image('jenkins/16.04').inside {
+
+            stage("Easy") {
+                sh "echo Testing"
             }
-        }
-        stage('test') {
-            steps {
-                sh """#!/bin/bash -ex
-                echo steps_stage
-                sudo test
-                sh echo hello
-                """
+
+            stage("Hard") {
+                sh "sudo test"
+            }
+
+            stage("After") {
+                echo "Made it!"
             }
         }
     }

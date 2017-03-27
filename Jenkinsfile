@@ -14,8 +14,7 @@ pipeline {
             steps {
                 echo 'Running tests'
                 sh """#!/bin/bash -ex
-                sudo su - postgres
-                psql -c "CREATE USER test_user WITH PASSWORD 'ndsecure1842';"
+                echo "psql -c \"CREATE USER test_user WITH PASSWORD 'ndsecure1842';\"" | sudo su - postgres -c
                 """
                 sh 'sudo su - postgres -c "psql -c \'SELECT * FROM pg_user;\'"'
                 echo 'We did it!'

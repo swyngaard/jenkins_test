@@ -17,7 +17,7 @@ pipeline {
                 echo hello
                 """
                 sh 'sudo su - postgres -c "psql -c \'CREATE USER test_user;\'"'
-                sh 'sudo su - postgres -c "psql -c \"SELECT * FROM pg_user;\""'
+                sh 'sudo su - postgres -c "psql -c \'SELECT * FROM pg_user;\'"'
                 echo 'We did it!'
             }
         }

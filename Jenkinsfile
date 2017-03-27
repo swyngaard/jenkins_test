@@ -13,10 +13,13 @@ pipeline {
         stage('test') {
             steps {
                 echo 'Running tests'
+
                 sh """#!/bin/bash -ex
                 sudo -u postgres psql -c "CREATE USER test_user WITH PASSWORD 'ndsecure1842';"
+                sudo -u postgres psql -c "CREATE DATABASE test_db OWNER test_user;"
+                sudo -u postgres psql -c "SELECT * FROM pg_database;"
                 """
-                sh 'sudo su - postgres -c "psql -c \'SELECT * FROM pg_user;\'"'
+
                 echo 'We did it!'
             }
         }

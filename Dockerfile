@@ -20,7 +20,7 @@ RUN echo "HEAD /" | nc `cat /tmp/host_ip.txt` 8000 | grep squid-deb-proxy \
 
 # Install project dependencies
 #RUN apt-get -y install postgresql postgresql-client python3-psycopg2
-RUN apt-get -y install sudo vim openssh-server
+RUN apt-get -y install sudo vim openssh-server postgresql postgresql-client python3-psycopg2
 
 # Add user with jenkins UID and GID
 RUN groupadd -g $JENKINS_GID $USERNAME

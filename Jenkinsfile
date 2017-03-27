@@ -14,7 +14,7 @@ pipeline {
             steps {
                 sh """#!/bin/bash -ex
                 echo steps_stage
-                sh echo hello
+                echo hello
                 """
                 sh 'sudo su - postgres -c "psql -c \"CREATE USER test_user;\""'
                 sh 'sudo su - postgres -c "psql -c \"SELECT * FROM pg_user;\""'

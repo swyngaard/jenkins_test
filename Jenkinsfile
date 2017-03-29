@@ -1,7 +1,7 @@
 pipeline {
     agent {
-        docker {
-            image "jenkins:16.04"
+        node("custom_docker") {
+            def hello = docker.build "jenkins:16.04"
         }
     }
     stages {

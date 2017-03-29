@@ -1,6 +1,8 @@
 pipeline {
     agent {
-        docker.image("jenkins:16.04")
+        docker {
+            image "jenkins:16.04"
+        }
     }
     stages {
         stage('build') {

@@ -1,6 +1,8 @@
 pipeline {
     agent {
-        dockerfile true
+        dockerfile {
+            args "--build-arg JENKINS_UID=111 --build-arg JENKINS_GID"
+        }
     }
     stages {
         stage('build') {

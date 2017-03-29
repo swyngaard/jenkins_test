@@ -1,8 +1,6 @@
 pipeline {
     agent {
-        node {
-            label "hellonode"
-        }
+        dockerfile true
     }
     stages {
         stage('build') {

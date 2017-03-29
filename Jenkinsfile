@@ -1,6 +1,6 @@
 pipeline {
     agent {
-        node("custom_docker") {
+        node {
             def hello = docker.build "jenkins:16.04"
         }
     }

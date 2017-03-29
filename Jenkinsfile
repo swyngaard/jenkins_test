@@ -1,7 +1,7 @@
 pipeline {
     agent {
         node {
-            def hello = docker.build "jenkins:16.04"
+            label "hellonode"
         }
     }
     stages {

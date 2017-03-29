@@ -1,6 +1,9 @@
 pipeline {
     agent {
-        docker.build("jenkins:16.04", "-f Dockerfile --build-arg JENKINS_UID=111 --build-arg JENKINS_GID")
+        node {
+            docker.image("jenkins:16.04")
+            docker.build("jenkins:16.04", "-f Dockerfile --build-arg JENKINS_UID=111 --build-arg JENKINS_GID")
+        }
     }
     stages {
         stage('build') {

@@ -5,7 +5,7 @@ pipeline {
     stages {
         stage('build') {
             steps {
-                echo "UID ${env.UID} GID ${env.GROUPS}"
+                echo "UID ${env.UID} GID ${env.GID}"
                 echo 'Starting services'
             }
         }

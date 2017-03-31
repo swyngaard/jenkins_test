@@ -10,9 +10,6 @@ ENV DATABASE=test_db
 RUN apt-get -y update
 RUN apt-get -y install sudo vim
 
-# Install project dependencies
-#RUN apt-get -y install openssh-server postgresql postgresql-client python3-psycopg2
-
 # Add user with jenkins UID and GID
 RUN groupadd -g $JENKINS_GID $USERNAME
 RUN useradd $USERNAME -u $JENKINS_UID -g $JENKINS_GID --shell /bin/bash --create-home

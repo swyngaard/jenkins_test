@@ -5,6 +5,7 @@ pipeline {
     stages {
         stage('build') {
             steps {
+                echo 'UID ${env.UID} GID ${env.GROUPS}'
                 echo 'Starting services'
                 sh 'sudo service ssh start'
                 sh 'sudo service postgresql start'

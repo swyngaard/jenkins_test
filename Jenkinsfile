@@ -1,7 +1,7 @@
 pipeline {
     agent {
         dockerfile {
-            additionalBuildArgs '--build-arg JENKINS_UID=${env.UID} --build-arg JENKINS_GID=${env.GID}'
+            additionalBuildArgs " --build-arg JENKINS_UID=${env.UID} --build-arg JENKINS_GID=${env.GID} "
         }
     }
     stages {

@@ -1,6 +1,8 @@
 pipeline {
     agent {
-        dockerfile true
+        dockerfile {
+            additionalBuildArgs "--build-arg JENKINS_UID=${env.UID} --build-arg JENKINS_GID=${env.GID}"
+        }
     }
     stages {
         stage('build') {
@@ -12,6 +14,8 @@ pipeline {
         stage('test') {
             steps {
                 echo 'Running tests'
+                sh 'whoami'
+                sh 'id'
                 echo 'We did it!'
             }
         }

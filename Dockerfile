@@ -1,8 +1,8 @@
 FROM ubuntu:16.04
 
 # Set jenkins UID and GID from current environment
-ARG JENKINS_UID=111
-ARG JENKINS_GID=118
+ARG JENKINS_UID
+ARG JENKINS_GID
 ENV USERNAME=test_user
 ENV DATABASE=test_db
 

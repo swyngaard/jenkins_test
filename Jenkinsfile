@@ -10,6 +10,7 @@ pipeline {
                 echo "UID ${env.TEST_UID} GID ${env.TEST_GID}"
                 echo "UID ${env.UID} GID ${env.GID}"
                 echo 'Starting services'
+                echo '...'
             }
         }
         stage('test') {

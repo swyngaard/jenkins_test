@@ -1,12 +1,13 @@
 pipeline {
     agent {
         dockerfile {
-            additionalBuildArgs " --build-arg JENKINS_UID=${env.UID} --build-arg JENKINS_GID=${env.GID} "
+            additionalBuildArgs " --build-arg JENKINS_UID=${env.TEST_UID} --build-arg JENKINS_GID=${env.TEST_GID} "
         }
     }
     stages {
         stage('build') {
             steps {
+                echo "UID ${env.TEST_UID} GID ${env.TEST_GID}"
                 echo "UID ${env.UID} GID ${env.GID}"
                 echo 'Starting services'
             }
